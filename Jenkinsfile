@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building Docker image...'
-                    bat 'docker build -t node-jenkins-app .'
+                    sh 'docker build -t node-jenkins-app .'
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     echo 'Running Docker container...'
-                    bat 'docker run -d --name node-jenkins-container -p 3000:3000 node-jenkins-app'
+                    sh 'docker run -d --name node-jenkins-container -p 3000:3000 node-jenkins-app'
                 }
             }
         }
